@@ -47,6 +47,5 @@ public class n1992 {
             }
         }
         compress(0,0,n);
-        
     }
 }
