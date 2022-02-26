@@ -1,5 +1,7 @@
 package algorithm.algorithm;
 
+import java.util.Scanner;
+
 public class n2577 {
     public static void main(String[] args) {
 		
