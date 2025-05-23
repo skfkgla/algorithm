@@ -22,7 +22,6 @@ public class Main {
         for(int i=0;K>i;){   //K번째까지 지우기
             P = num.get(0);
             P1 = P;
-            // System.out.println(P+"바퀴수\n"); //테스트 주석
             num.remove(Integer.valueOf(P1));
             ++i;
             System.out.println(num.size());
@@ -30,7 +29,6 @@ public class Main {
                 P1 = P1+P;
                 if(num.contains(P1)){
                 num.remove(Integer.valueOf(P1));
-                // System.out.println(num); //테스트 주석
                 }
                 else i--;
             }
