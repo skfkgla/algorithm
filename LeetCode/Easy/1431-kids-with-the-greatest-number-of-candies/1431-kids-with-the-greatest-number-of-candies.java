@@ -2,10 +2,15 @@ import java.util.*;
 
 class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        int maxCandies = Arrays.stream(candies).max().getAsInt();
+        int max = 0;
+        for(int i = 0; i<candies.length; i++){
+            if(max < candies[i]){
+                max = candies[i];
+            }
+        }
         List<Boolean> result = new ArrayList<>();
         for(int i = 0; i < candies.length; i++) {
-            result.add((candies[i] + extraCandies) >= maxCandies);
+            result.add((candies[i] + extraCandies) >= max);
         }
         return result;
     }
