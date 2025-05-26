@@ -9,20 +9,15 @@ class Solution {
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
 
-        for (int n : nums1) {
-            set1.add(n);
-        }
         for (int n : nums2) {
             set2.add(n);
         }
 
-        List<Integer> result = new ArrayList<>();
-
-        for (int n : set1) {
+        for (int n : nums1) {
             if (!set2.contains(n)) {
-                result.add(n);
+                set1.add(n);
             }
         }
-        return result;
+        return new ArrayList<>(set1);
     }
 }
