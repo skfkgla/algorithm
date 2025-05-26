@@ -2,6 +2,10 @@ import java.util.*;
 
 class Solution {
     public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        return List.of(findDifferenceNums1(nums1, nums2), findDifferenceNums1(nums2, nums1));
+    }
+
+    private List<Integer> findDifferenceNums1(int[] nums1, int[] nums2) {
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
 
@@ -12,21 +16,13 @@ class Solution {
             set2.add(n);
         }
 
-        List<Integer> result1 = new ArrayList<>();
-        List<Integer> result2 = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
         for (int n : set1) {
             if (!set2.contains(n)) {
-                result1.add(n);
+                result.add(n);
             }
         }
-
-        for (int n : set2) {
-            if (!set1.contains(n)) {
-                result2.add(n);
-            }
-        }
-
-        return List.of(result1, result2);
+        return result;
     }
 }
