@@ -6,11 +6,14 @@ class RecentCounter {
     public RecentCounter() {
         this.counter = new LinkedList<>();
     }
-    
+
     public int ping(int t) {
-        counter.removeIf(time -> time < t - 3000 || time > t);
+        while (!counter.isEmpty() && (counter.peek() < t - 3000 || counter.peek() > t)) {
+            counter.remove();
+        }
+
         counter.add(t);
-        
+
         return counter.size();
     }
 }
